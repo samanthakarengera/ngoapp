@@ -1,4 +1,4 @@
-package be.ehb.ngo.model;
+package be.ehb.ngoapp.model;
 
 import jakarta.persistence.*;
 
