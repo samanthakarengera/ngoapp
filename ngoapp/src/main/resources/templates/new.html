@@ -9,27 +9,22 @@
     <title>NGO Anderlecht - Nieuw Evenement</title>
 </head>
 <body>
-<nav class="navbar">
-
-
-    <a href="/" class="navbar-brand">
-        NGO Anderlecht
-    </a>
-
-    <a href="/new" class="text-white">
-        Nieuw evenement
-    </a>
-
-    <a href="/about" class="text-white">
-        About
-    </a>
-
-    <a href="/contact" class="text-white">
-        Contact
-    </a>
-
+<nav>
+    <a href="/">NGO</a>
+    <a href="/new">New</a>
+    <a href="/about">About</a>
+    <a href="/contact">Contact</a>
 </nav>
-<h1>Nieuw Evenement</h1>
+<h1>New Event</h1>
+
+<form method="post" action="/new">
+
+    <input name="titel" placeholder="Titel"/>
+    <input name="organisatie" placeholder="Organisatie"/>
+    <input name="emailContact" placeholder="Email"/>
+
+    <button type="submit">Save</button>
+</form>
 
 <footer class="text-center mt-5">
     <hr>

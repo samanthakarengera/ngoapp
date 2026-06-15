@@ -1,9 +1,6 @@
 package be.ehb.ngoapp.model;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotBlank;
-
 import java.time.LocalDateTime;
 
 @Entity
@@ -14,24 +11,33 @@ public class Event {
     private Long id;
 
     private LocalDateTime tijdstip;
-
-    @NotBlank
     private String titel;
-
-    @NotBlank
     private String omschrijving;
-
-    @NotBlank
     private String organisatie;
-
-    @Email
-    private String contactEmail;
+    private String emailContact;
 
     @ManyToOne
-    private Location locatie;
+    private Location location;
 
-    public Event() {
-    }
+    public Event() {}
 
-    // getters en setters
+    public Long getId() { return id; }
+
+    public LocalDateTime getTijdstip() { return tijdstip; }
+    public void setTijdstip(LocalDateTime tijdstip) { this.tijdstip = tijdstip; }
+
+    public String getTitel() { return titel; }
+    public void setTitel(String titel) { this.titel = titel; }
+
+    public String getOmschrijving() { return omschrijving; }
+    public void setOmschrijving(String omschrijving) { this.omschrijving = omschrijving; }
+
+    public String getOrganisatie() { return organisatie; }
+    public void setOrganisatie(String organisatie) { this.organisatie = organisatie; }
+
+    public String getEmailContact() { return emailContact; }
+    public void setEmailContact(String emailContact) { this.emailContact = emailContact; }
+
+    public Location getLocation() { return location; }
+    public void setLocation(Location location) { this.location = location; }
 }

@@ -1,7 +1,6 @@
 package be.ehb.ngoapp.controller;
 
 import be.ehb.ngoapp.repository.EventRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,16 +8,20 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class HomeController {
 
-    @Autowired
-    private EventRepository eventRepository;
+    private final EventRepository repo;
+
+    public HomeController(EventRepository repo) {
+        this.repo = repo;
+    }
 
     @GetMapping("/")
-    public String home(Model model) {
-
-        model.addAttribute(
-                "evenementen",
-                eventRepository.findAll());
-
+    public String index(Model model) {
+        model.addAttribute("events", repo.findTop10ByOrderByTijdstipDesc());
         return "index";
+    }
+
+    @GetMapping("/about")
+    public String about() {
+        return "about";
     }
 }

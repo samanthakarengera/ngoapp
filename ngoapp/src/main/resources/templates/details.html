@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -9,26 +9,18 @@
     <title>NGO Anderlecht - Details</title>
 </head>
 <body>
-<nav class="navbar">
-
-    <a href="/" class="navbar-brand">
-        NGO Anderlecht
-    </a>
-
-    <a href="/new" class="text-white">
-        Nieuw evenement
-    </a>
-
-    <a href="/about" class="text-white">
-        About
-    </a>
-
-    <a href="/contact" class="text-white">
-        Contact
-    </a>
-
+<nav>
+    <a href="/">NGO</a>
+    <a href="/new">New</a>
+    <a href="/about">About</a>
+    <a href="/contact">Contact</a>
 </nav>
-<h1>Details</h1>
+<h1>Event details</h1>
+
+<p th:text="${event.titel}"></p>
+<p th:text="${event.organisatie}"></p>
+<p th:text="${event.omschrijving}"></p>
+<p th:text="${event.emailContact}"></p>
 
 <footer class="text-center mt-5">
     <hr>
