@@ -17,12 +17,17 @@
 </nav>
 <div class="container">
 <h1>Contact</h1>
+    <form action="/contact/send" method="post">
 
-<form>
-    <input placeholder="email"/>
-    <textarea placeholder="message"></textarea>
-    <button>Send</button>
-</form>
+        <input type="email" name="email" placeholder="Jouw email" required>
+
+        <input type="text" name="subject" placeholder="Onderwerp" required>
+
+        <textarea name="message" placeholder="Bericht" required></textarea>
+
+        <button type="submit">Verstuur</button>
+
+    </form>
 </div>
 <footer class="text-center mt-5">
     <hr>
