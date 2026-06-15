@@ -33,16 +33,32 @@
 <main class="container">
     <h2>Laatste 10 Evenementen</h2>
 
-    <tbody>
-    <!-- th:each herhaalt dit rij-element voor de laatste 10 evenementen uit je Java Controller -->
-    <tr th:each="evenement : ${evenementen}">
-        <td th:text="${evenement.titel}">Titel komt hier</td>
-        <td th:text="${evenement.organisatie}">Organisatie komt hier</td>
-        <td>
-            <a th:href="@{/events/{id}(id=${evenement.id})}" class="btn-detail">Bekijk details</a>
-        </td>
-    </tr>
-    </tbody>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Titel</th>
+            <th>Organisatie</th>
+            <th>Details</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr th:each="evenement : ${evenementen}">
+
+            <td th:text="${evenement.titel}"></td>
+
+            <td th:text="${evenement.organisatie}"></td>
+
+            <td>
+                <a th:href="@{/details/{id}(id=${evenement.id})}"
+                   class="btn btn-primary">
+                    Details
+                </a>
+            </td>
+
+        </tr>
+        </tbody>
+    </table>
 
     <div class="action-bar">
         <a href="/new" class="btn-primary">Nieuw evenement toevoegen</a>
