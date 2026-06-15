@@ -9,19 +9,20 @@
     <title>NGO Anderlecht - Details</title>
 </head>
 <body>
-<nav>
+<nav class="navbar">
     <a href="/">NGO</a>
     <a href="/new">New</a>
     <a href="/about">About</a>
     <a href="/contact">Contact</a>
 </nav>
+<div class="container">
 <h1>Event details</h1>
 
 <p th:text="${event.titel}"></p>
 <p th:text="${event.organisatie}"></p>
 <p th:text="${event.omschrijving}"></p>
 <p th:text="${event.emailContact}"></p>
-
+</div>
 <footer class="text-center mt-5">
     <hr>
     <p>
