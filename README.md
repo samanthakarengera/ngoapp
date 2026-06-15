@@ -26,7 +26,7 @@ De NGO helpt mensen een overzicht te geven van evenementen die worden georganise
 - Info over de NGO in Anderlecht
 
 ### Contact pagina
-- Contactformulier
+- Contactformulier (Mailtrap)
 
 ---
 
